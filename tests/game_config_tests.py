@@ -27,10 +27,10 @@ class TestGameConfigDefaults(GameConfigTestBase):
 
         self.assertEqual(cfg.get_board_colors(), self.default_board_color)
 
-        self.assertEqual(cfg.get_up_keycodes(), self.default_values['controls']['up'])
-        self.assertEqual(cfg.get_down_keycodes(), self.default_values['controls']['down'])
-        self.assertEqual(cfg.get_left_keycodes(), self.default_values['controls']['left'])
-        self.assertEqual(cfg.get_right_keycodes(), self.default_values['controls']['right'])
+        self.assertEqual(cfg.get_up_keys(), self.default_values['controls']['up'])
+        self.assertEqual(cfg.get_down_keys(), self.default_values['controls']['down'])
+        self.assertEqual(cfg.get_left_keys(), self.default_values['controls']['left'])
+        self.assertEqual(cfg.get_right_keys(), self.default_values['controls']['right'])
 
         self.assertEqual(cfg.get_tile_colors(2), self.default_cell_color)
         self.assertEqual(cfg.get_tile_colors(8), self.default_cell_color)
@@ -89,10 +89,10 @@ class TestGameConfigWithJsonFile(GameConfigTestBase):
         self.assertEqual(cfg.get_label_font(), ("SimSun", 22))
         self.assertEqual(cfg.get_board_colors(), ("#111111", "#888888"))
 
-        self.assertEqual(cfg.get_up_keycodes(), self.default_values['controls']['up'])
-        self.assertEqual(cfg.get_down_keycodes(), [83, 40])
-        self.assertEqual(cfg.get_left_keycodes(), [65])
-        self.assertEqual(cfg.get_right_keycodes(), [68])
+        self.assertEqual(cfg.get_up_keys(), self.default_values['controls']['up'])
+        self.assertEqual(cfg.get_down_keys(), [83, 40])
+        self.assertEqual(cfg.get_left_keys(), [65])
+        self.assertEqual(cfg.get_right_keys(), [68])
 
         self.assertEqual(cfg.get_tile_colors(2), ("#222222", "#000000"))
         self.assertEqual(cfg.get_tile_colors(8), ("#888888", "#444444"))

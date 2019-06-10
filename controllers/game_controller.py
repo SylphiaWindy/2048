@@ -40,13 +40,13 @@ class GameController(ControllerBase):
 
     @classmethod
     def dispatch(cls, event, *args, **kwargs):
-        if event.keycode in cls.Config.get_up_keycodes():
+        if event.keysym in cls.Config.get_up_keys():
             cls.move(Directions.Up)
-        elif event.keycode in cls.Config.get_down_keycodes():
+        elif event.keysym in cls.Config.get_down_keys():
             cls.move(Directions.Down)
-        elif event.keycode in cls.Config.get_left_keycodes():
+        elif event.keysym in cls.Config.get_left_keys():
             cls.move(Directions.Left)
-        elif event.keycode in cls.Config.get_right_keycodes():
+        elif event.keysym in cls.Config.get_right_keys():
             cls.move(Directions.Right)
 
     @classmethod

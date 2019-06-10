@@ -1,9 +1,9 @@
 {
   "controls": {
-    "up": [87, 38, 104],
-    "down": [83, 40, 98],
-    "left": [65, 37, 100],
-    "right": [68, 39, 102]
+    "up": ["w", "8", "Up"],
+    "down": ["s", "2", "Down"],
+    "left": ["a", "4", "Left"],
+    "right": ["d", "6", "Right"]
   },
   "font": {
     "face": "Arial",

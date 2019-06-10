@@ -8,10 +8,10 @@ import json
 class GameConfig(object):
     __defaults = {
         "controls": {
-            "up": [38],
-            "down": [40],
-            "left": [37],
-            "right": [39]
+            "up": ["Up"],
+            "down": ["Down"],
+            "left": ["Left"],
+            "right": ["Right"]
         },
         "dimensions": {
             "cellSize": 100,
@@ -47,33 +47,33 @@ class GameConfig(object):
         except:
             pass
 
-    def get_up_keycodes(self):
+    def get_up_keys(self):
         """
         Get key codes that defined as move up
         :return: array of keycodes
         """
-        return self.__get_keycodes_for("up")
+        return self.__get_keys_for("up")
 
-    def get_down_keycodes(self):
+    def get_down_keys(self):
         """
         Get key codes that defined as move down
         :return: array of keycodes
         """
-        return self.__get_keycodes_for("down")
+        return self.__get_keys_for("down")
 
-    def get_left_keycodes(self):
+    def get_left_keys(self):
         """
         Get key codes that defined as move left
         :return: array of keycodes
         """
-        return self.__get_keycodes_for("left")
+        return self.__get_keys_for("left")
 
-    def get_right_keycodes(self):
+    def get_right_keys(self):
         """
         Get key codes that defined as move right
         :return: array of keycodes
         """
-        return self.__get_keycodes_for("right")
+        return self.__get_keys_for("right")
 
     def get_cell_size(self):
         """
@@ -121,5 +121,5 @@ class GameConfig(object):
         return config_fg or self.__defaults["colors"]["tiles"]["undefined"]["foreground"], config_bg or \
                self.__defaults["colors"]["tiles"]["undefined"]["background"]
 
-    def __get_keycodes_for(self, direction):
+    def __get_keys_for(self, direction):
         return self.data.get("controls", {}).get(direction, []) or self.__defaults["controls"][direction]
