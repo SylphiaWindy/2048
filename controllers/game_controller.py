@@ -15,7 +15,7 @@ class GameController(ControllerBase):
     @classmethod
     def initialize(cls, config):
         cls.Config = config
-        cls.Game = Game(4, 16)
+        cls.Game = Game()
         cls.Board = Board(cls.Game, _("2048"), config, asyncio.get_event_loop())
         cls.Board.on_new_game_clicked += cls.new_game
         cls.Board.on_undo_clicked += cls.undo
