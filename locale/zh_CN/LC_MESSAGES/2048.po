@@ -1,0 +1,52 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 2048\n"
+"POT-Creation-Date: 2019-06-11 02:38+0800\n"
+"PO-Revision-Date: 2019-06-11 02:56+0800\n"
+"Last-Translator: \n"
+"Language-Team: admin@sylphia.org\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.3\n"
+"X-Poedit-Basepath: ../../..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: controllers/game_controller.py:20
+msgid "2048"
+msgstr "2048"
+
+#: views/board.py:52
+msgid "Congratulations, YOU WON!"
+msgstr "恭喜，你赢了！"
+
+#: views/board.py:52
+msgid "Don't be sad, it always happens."
+msgstr "人之常情，无需多虑。"
+
+#: views/board.py:53
+msgid "You WON"
+msgstr "获胜"
+
+#: views/board.py:53
+msgid "Game Over"
+msgstr "游戏结束"
+
+#: views/board.py:127
+msgid "New Game"
+msgstr "开始新游戏"
+
+#: views/board.py:129
+msgid "Undo"
+msgstr "撤销"
+
+#: views/board.py:131
+msgid "Score"
+msgstr "得分"
+
+#: views/board.py:131 views/board.py:136
+msgid "Arial"
+msgstr "SimHei"

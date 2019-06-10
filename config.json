@@ -1,0 +1,68 @@
+{
+  "controls": {
+    "up": [87, 38, 104],
+    "down": [83, 40, 98],
+    "left": [65, 37, 100],
+    "right": [68, 39, 102]
+  },
+  "font": {
+    "face": "Arial",
+    "size": 20
+  },
+  "dimensions": {
+    "cellSize": 100,
+    "cellPadding": 10
+  },
+  "colors": {
+    "board": {
+      "foreground": "#ac7e65",
+      "background": "#d59f81"
+    },
+    "tiles": {
+      "2": {
+        "foreground": "#635b53",
+        "background": "#efe3d7"
+      },
+      "4": {
+        "foreground": "#635b53",
+        "background": "#e3cab1"
+      },
+      "8": {
+        "foreground": "#635b53",
+        "background": "#cfa67d"
+      },
+      "16": {
+        "foreground": "#635b53",
+        "background": "#beddd2"
+      },
+      "32": {
+        "foreground": "#635b53",
+        "background": "#96d4be"
+      },
+      "64": {
+        "foreground": "#635b53",
+        "background": "#68c6a5"
+      },
+      "128": {
+        "foreground": "#635b53",
+        "background": "#e6b5c9"
+      },
+      "256": {
+        "foreground": "#efe8e1",
+        "background": "#d881a4"
+      },
+      "512": {
+        "foreground": "#635b53",
+        "background": "#b1a9e4"
+      },
+      "1024": {
+        "foreground": "#635b53",
+        "background": "#8174d4"
+      },
+      "2048": {
+        "foreground": "#efe8e1",
+        "background": "#ee121c"
+      }
+    }
+  }
+}
