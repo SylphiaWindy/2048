@@ -33,12 +33,22 @@ class Game(object):
 
         self.size = size
         self.target = target
-        self.matrix = []
-        self.empty_cell_count = size * size
+
+        self.matrix = None
+        self.empty_cell_count = 0
+        self.score = 0
+        self.undo_history = None
+        self.game_over = False
+
+        self.__clear_game_states()
+        pass
+
+    def __clear_game_states(self):
+        self.matrix = [[0 for _ in range(self.size)] for __ in range(self.size)]
+        self.empty_cell_count = self.size * self.size
         self.score = 0
         self.undo_history = []
         self.game_over = False
-        pass
 
     def __create_random_tile(self, count, values):
         count = min(self.empty_cell_count, count)
@@ -62,10 +72,7 @@ class Game(object):
         Start a new game, clears old score and tiles, place two random tile of 2 or 4 on board
         :return:
         """
-        self.matrix = [[0 for _ in range(self.size)] for __ in range(self.size)]
-        self.empty_cell_count = self.size * self.size
-        self.score = 0
-        self.game_over = False
+        self.__clear_game_states()
         self.__create_random_tile(2, [2, 4])
 
     def undo(self):
@@ -77,8 +84,9 @@ class Game(object):
             return
         if not self.undo_history:
             return
-        last_score, last_matrix = self.undo_history.pop()
+        last_score, last_empty_cell_count, last_matrix = self.undo_history.pop()
         self.score = last_score
+        self.empty_cell_count = last_empty_cell_count
         self.matrix = deepcopy(last_matrix)
         self.undo_event(self.score, self.matrix)
 
@@ -138,7 +146,7 @@ class Game(object):
         moved = False  # Do not create new tile if nothing has been moved
         game_won = False
         merge_info = [[False for _ in range(self.size)] for __ in range(self.size)]  # saves which cell was merged
-        last_state = self.score, deepcopy(self.matrix)  # save current state for undo
+        last_state = self.score, self.empty_cell_count, deepcopy(self.matrix)  # save current state for undo
         for i in self.__get_traversal_range(vector_x):
             for j in self.__get_traversal_range(vector_y):
                 tile = self.__get_matrix_value_at(self.matrix, i, j)
